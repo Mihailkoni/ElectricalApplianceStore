@@ -1,0 +1,61 @@
+/* Общие стили */
+.root {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-background-color: #f4f4f4;
+}
+
+/* Стили для кнопок */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Стили для текстовых полей */
+.text-field {
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #bdc3c7;
+}
+
+/* Стили для меток */
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Стили для таблиц */
+.table-view {
+    -fx-font-size: 14px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #bdc3c7;
+}
+
+.table-column {
+    -fx-alignment: CENTER;
+}
+
+/* Стили для вкладок */
+.tab-pane {
+    -fx-background-color: #ffffff;
+}
+
+.tab {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 14px;
+}
+
+.tab:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}

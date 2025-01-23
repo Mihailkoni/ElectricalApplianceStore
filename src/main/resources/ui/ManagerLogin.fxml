@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox spacing="20" style="-fx-padding: 20; -fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="ui.ManagerLoginController"
+      stylesheets="@../styles.css">
+
+    <Label text="Авторизация менеджера" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Электронная почта:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-size: 14px;"/>
+        <TextField fx:id="emailField" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Введите электронную почту" style="-fx-font-size: 14px; -fx-pref-width: 300px;"/>
+    </GridPane>
+
+    <HBox spacing="10">
+        <Button text="Войти" onAction="#handleLogin" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+        <Button text="Назад" onAction="#goBack" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+    </HBox>
+</VBox>

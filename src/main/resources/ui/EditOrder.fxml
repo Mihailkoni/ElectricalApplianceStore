@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox spacing="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="ui.EditOrderController">
+    <Label text="Редактирование заказа" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <TableView fx:id="orderDetailsTable" style="-fx-font-size: 14px; -fx-pref-width: 800px;">
+        <columns>
+            <TableColumn text="Артикул" fx:id="articleColumn" prefWidth="150" />
+            <TableColumn text="Название" fx:id="nameColumn" prefWidth="250" />
+            <TableColumn text="Количество в заказе" fx:id="quantityColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="quantity" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Количество на складе" fx:id="stockColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="stockQuantity" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <Button text="Сохранить изменения" onAction="#handleSaveOrder"/>
+</VBox>

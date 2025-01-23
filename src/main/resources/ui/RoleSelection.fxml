@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" style="-fx-padding: 20; -fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="ui.RoleSelectionController"
+      stylesheets="@../styles.css">
+
+    <Label text="Выберите роль" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <VBox spacing="10" alignment="CENTER">
+        <Button text="Клиент" onAction="#handleClient" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 15px 30px;"/>
+        <Button text="Менеджер" onAction="#handleManager" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 15px 30px;"/>
+    </VBox>
+</VBox>

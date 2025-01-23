@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox spacing="20" style="-fx-padding: 20; -fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="ui.ManagerTasksController"
+      stylesheets="@../styles.css">
+
+    <Label text="Личный кабинет менеджера" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <Button text="Назад" onAction="#goBack" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+
+    <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" style="-fx-background-color: #ffffff;">
+        <tabs>
+            <Tab text="Электроприборы">
+                <content>
+                    <VBox spacing="10" style="-fx-padding: 20;">
+                        <Label text="Управление электроприборами" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                        <HBox spacing="10">
+                            <Button text="Добавить электроприбор" onAction="#handleAddAppliance" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+                            <Button text="Редактировать электроприбор" onAction="#handleEditAppliance" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+                        </HBox>
+                        <TableView fx:id="applianceTable" style="-fx-font-size: 14px; -fx-pref-width: 800px;">
+                            <columns>
+                                <TableColumn text="Артикул" fx:id="articleColumn" prefWidth="150" />
+                                <TableColumn text="Название" fx:id="nameColumn" prefWidth="250" />
+                                <TableColumn text="Тип" fx:id="typeColumn" prefWidth="150">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="typeName" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn text="Цена" fx:id="priceColumn" prefWidth="100" />
+                                <TableColumn text="Количество" fx:id="stockColumn" prefWidth="100" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+
+            <Tab text="Клиенты">
+                <content>
+                    <VBox spacing="10" style="-fx-padding: 20;">
+                        <Label text="Управление клиентами" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                        <HBox spacing="10">
+                            <Button text="Добавить клиента" onAction="#handleAddClient" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+                            <Button text="Редактировать клиента" onAction="#handleEditClient" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+                        </HBox>
+                        <TableView fx:id="clientTable" style="-fx-font-size: 14px; -fx-pref-width: 800px;">
+                            <columns>
+                                <TableColumn text="Серия паспорта" fx:id="passportSeriesColumn" prefWidth="150" />
+                                <TableColumn text="Номер паспорта" fx:id="passportNumberColumn" prefWidth="150" />
+                                <TableColumn text="ФИО" fx:id="fullNameColumn" prefWidth="250" />
+                                <TableColumn text="Телефон" fx:id="phoneColumn" prefWidth="150">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="phoneNumber" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+
+            <Tab text="Заказы">
+                <content>
+                    <VBox spacing="10" style="-fx-padding: 20;">
+                        <Label text="Управление заказами" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                        <HBox spacing="10">
+                            <Button text="Оформить заказ" onAction="#handleAddOrder" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+                            <Button text="Редактировать заказ" onAction="#handleEditOrder" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+                        </HBox>
+                        <TableView fx:id="orderTable" style="-fx-font-size: 14px; -fx-pref-width: 800px;">
+                            <columns>
+                                <TableColumn text="Номер заказа" fx:id="orderIdColumn" prefWidth="100" />
+                                <TableColumn text="Номер паспорта клиента" fx:id="clientPassportNumberColumn" prefWidth="150" />
+                                <TableColumn text="Имя клиента" fx:id="clientFullNameColumn" prefWidth="200" />  <!-- Новый столбец -->
+                                <TableColumn text="Электроприборы" fx:id="applianceDetailsColumn" prefWidth="400" />
+                                <TableColumn text="Итоговая цена" fx:id="totalPriceColumn" prefWidth="120" />
+                                <TableColumn text="Дата заказа" fx:id="orderDateColumn" prefWidth="150" />
+                                <TableColumn text="Менеджер" fx:id="managerEmailColumn" prefWidth="200" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </content>
+            </Tab>
+
+            <Tab text="Менеджер">
+                <content>
+                    <VBox spacing="10" style="-fx-padding: 20;">
+                        <Label text="Данные менеджера" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                        <Label fx:id="emailLabel" style="-fx-font-size: 14px;"/>
+                        <Label fx:id="loginLabel" style="-fx-font-size: 14px;"/>
+                    </VBox>
+                </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+</VBox>
