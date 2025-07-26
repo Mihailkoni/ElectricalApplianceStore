@@ -3,6 +3,7 @@
 In this application, I use:
 * Java (main language)
 * JavaFX for GUI
+* CSS for styles
 * PostgreSQL for database
 * MVC (Model-View-Controller) architectural pattern
 ### Database structure
